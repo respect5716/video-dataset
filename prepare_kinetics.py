@@ -10,8 +10,9 @@ args = parser.parse_args()
 
 def main(args):
     root = f'{args.output_dir}-{args.num_classes}'
-    Kinetics(root=root, frames_per_clip=32, num_classes=args.num_classes, download=True, num_download_workers=args.num_download_workers)
-    pass
+    Kinetics(root=root, split='train', frames_per_clip=32, num_classes=args.num_classes, download=True, num_download_workers=args.num_download_workers)
+    Kinetics(root=root, split='val', frames_per_clip=32, num_classes=args.num_classes, download=True, num_download_workers=args.num_download_workers)
+    
 
 if __name__ == '__main__':
     main(args)
